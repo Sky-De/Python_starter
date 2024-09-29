@@ -52,3 +52,16 @@
 
 
 # # Tuples--------------------------------------------------------
+# # Tuples are immutable / basic diffrence list vs tuples
+# cordinate = (4,5)
+# cordinates = [(4,5),(14,51),(41,15),(422,35),(24,35)]
+
+# print(cordinate)
+# print(cordinate[0])
+# print(cordinates)
+# print(cordinates[0])
+
+# # cordinate[1] = 10 #we can not change / immutable
+
+
+# Functions--------------------------------------------------------
