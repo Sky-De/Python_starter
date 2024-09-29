@@ -64,4 +64,21 @@
 # # cordinate[1] = 10 #we can not change / immutable
 
 
-# Functions--------------------------------------------------------
+# # Functions--------------------------------------------------------
+
+# def my_function(name):
+#     print("Hi to You " + name)
+    
+# my_function("sky")
+# my_function("sia")
+
+
+# def cube_number(number):
+#     return number * number * number
+
+# result_of_cube_number_2 = cube_number(2)
+# print(cube_number(3))
+# print(result_of_cube_number_2)
+
+
+# If statements --------------------------------------------------------
