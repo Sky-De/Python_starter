@@ -81,15 +81,30 @@
 # print(result_of_cube_number_2)
 
 
-# If statements --------------------------------------------------------
-is_male = False
-is_tall = True
-is_strong = False
-if is_male and is_tall:
-    print("Male or Tall")
-elif False or is_strong:
-    print("tall and strong")
-elif is_tall and not(is_strong):
-    print("tall and weak")
-else:
-    print("Female or Short")
+# # If statements --------------------------------------------------------
+# is_male = False
+# is_tall = True
+# is_strong = False
+# if is_male and is_tall:
+#     print("Male or Tall")
+# elif False or is_strong:
+#     print("tall and strong")
+# elif is_tall and not(is_strong):
+#     print("tall and weak")
+# else:
+#     print("Female or Short")
+
+
+# Comparison --------------------------------------------------------
+def max_num(num1,num2,num3):
+    if num1 >= num2 and num1 >= num3:
+        return num1
+    elif num2 >= num1 and num2 >= num3:
+        return num2
+    elif num2 == num1 and num2 != num3:
+        return "test"
+    else:
+        return num3
+    
+    
+print(max_num(1,2,3))
