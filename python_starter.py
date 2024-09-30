@@ -82,3 +82,14 @@
 
 
 # If statements --------------------------------------------------------
+is_male = False
+is_tall = True
+is_strong = False
+if is_male and is_tall:
+    print("Male or Tall")
+elif False or is_strong:
+    print("tall and strong")
+elif is_tall and not(is_strong):
+    print("tall and weak")
+else:
+    print("Female or Short")
