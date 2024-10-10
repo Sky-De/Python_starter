@@ -11,9 +11,9 @@
 #   while low <= high:
 #       mid = (high + low) // 2
 #       if list[mid] < target:
-#         low = mid -1   
+#         low = mid + 1   
 #       elif list[mid] > target:
-#         high = mid + 1   
+#         high = mid - 1   
 #       if list[mid] == target:
 #        return mid
           
@@ -37,4 +37,4 @@ def my_binary_search_recursive(low,high,list,target):
   return None
 
 
-print(my_binary_search_recursive(0,len(myList) - 1, myList,2))
+print(my_binary_search_recursive(0,len(myList) - 1, myList,10))
