@@ -41,10 +41,28 @@ target_number = 9
 
 
 
-def the_bs(list,target):
-    low = 0 
-    high = len(list) -1
+# def the_bs(list,target):
+#     low = 0 
+#     high = len(list) -1
+#     mid = 0
+#     while low <= high:
+#         mid = (high + low) // 2
+#         mid_item = list[mid]
+#         if mid_item == target:
+#             return mid
+#         elif mid_item < target:
+#             low = mid + 1
+#         elif mid_item > target:
+#             high = mid -1
+#     return None
+
+# print(the_bs(myList,target_number))
+
+def myBs(list,target):
+    low = 0
     mid = 0
+    high = len(list) -1
+    
     while low <= high:
         mid = (high + low) // 2
         mid_item = list[mid]
@@ -56,4 +74,4 @@ def the_bs(list,target):
             high = mid -1
     return None
 
-print(the_bs(myList,target_number))
+print(myBs(myList,target_number))
