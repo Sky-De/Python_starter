@@ -211,19 +211,33 @@ target_number = 9
 # print(myBsW(myList,target_number))
 # print(myBsR(0,len(myList)-1,myList,target_number))
 
-def bs(arr,target):
-    low = 0
-    mid = 0
-    high = len(arr) - 1
-    while low <= high:
-        mid = (high + low ) // 2
+# def bs(arr,target):
+#     low = 0
+#     mid = 0
+#     high = len(arr) - 1
+#     while low <= high:
+#         mid = (high + low ) // 2
+#         mid_item = arr[mid]
+#         if mid_item == target:
+#             return mid
+#         elif mid_item < target:
+#             low = mid + 1
+#         elif mid_item > target: 
+#             high = mid - 1
+#     return None
+
+# print(bs(myList,target_number))
+
+def bsR(low,high,arr,target):
+    if(low <= high):
+        mid = (high + low) // 2
         mid_item = arr[mid]
         if mid_item == target:
             return mid
+        elif mid_item > target:
+            return bsR(low,mid - 1,arr,target)
         elif mid_item < target:
-            low = mid + 1
-        elif mid_item > target: 
-            high = mid - 1
+            return bsR(mid + 1,high,arr,target)
     return None
 
-print(bs(myList,target_number))
+print(bsR(0,len(myList)-1,myList,target_number))
