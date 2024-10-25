@@ -1,5 +1,5 @@
 
-# # Binary with While loop
+# # selection_sort with While loop
 
 myList = [5,6,33,2,3,1,9,11,10,4,7,8]
 
