@@ -242,34 +242,52 @@ target_number = 9
 
 # print(bsR(0,len(myList)-1,myList,target_number))
 
-def myBs(arr,target):
-    low = 0
-    mid = 0
-    high = len(arr) - 1
-    while low <= high:
-        mid = (high + low) // 2
-        mid_item = arr[mid]
-        if mid_item == target:
-            return mid
-        elif mid_item < target:
-            low = mid + 1
-        elif mid_item > target:
-            high = mid - 1
-    return None
+# def myBs(arr,target):
+#     low = 0
+#     mid = 0
+#     high = len(arr) - 1
+#     while low <= high:
+#         mid = (high + low) // 2
+#         mid_item = arr[mid]
+#         if mid_item == target:
+#             return mid
+#         elif mid_item < target:
+#             low = mid + 1
+#         elif mid_item > target:
+#             high = mid - 1
+#     return None
 
 
-def RBS(low,high,arr,target):
-    if high >= low:
-        mid = (high + low ) // 2
-        mid_item = arr[mid]
-        if mid_item == target:
-            return mid
-        elif mid_item < target:
-            return RBS(mid + 1 ,high, arr, target)
-        elif mid_item > target:
-            return RBS( low,mid - 1, arr, target)
-    return None
+# def RBS(low,high,arr,target):
+#     if high >= low:
+#         mid = (high + low ) // 2
+#         mid_item = arr[mid]
+#         if mid_item == target:
+#             return mid
+#         elif mid_item < target:
+#             return RBS(mid + 1 ,high, arr, target)
+#         elif mid_item > target:
+#             return RBS( low,mid - 1, arr, target)
+#     return None
 
 
-print(myBs(myList,target_number))
-print(RBS(0,len(myList) - 1,myList,target_number))
+# print(myBs(myList,target_number))
+# print(RBS(0,len(myList) - 1,myList,target_number))
+
+
+myList = [5,6,33,2,3,1,9,11,10,4,7,8]
+
+
+def selection_sort(arr):
+  for i in range(0,len(arr)):
+    indexOfMin = i
+    for j in range(i+1,len(arr)):
+      if arr[indexOfMin] > arr[j]:
+        indexOfMin = j
+      if(indexOfMin != i):
+        arr[i],arr[indexOfMin] = arr[indexOfMin], arr[i]
+  return arr
+
+sortedList = selection_sort(myList)
+
+print(sortedList)
