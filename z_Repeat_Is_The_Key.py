@@ -292,15 +292,34 @@ myList1 = [5,6,33,2,3,1,9,11,10,4,7,8]
 
 # print(sortedList)
 
-def selection_sort(arr):
-  for i in range(0, len(arr)):
-    index_of_min = i
-    for j in range(i+1,len(arr)):
-      if arr[index_of_min] > arr[j]:
-        index_of_min = j
-      if index_of_min != i:
-        arr[i],arr[index_of_min] = arr[index_of_min], arr[i]
-  return arr
+# def selection_sort(arr):
+#   for i in range(0, len(arr)):
+#     index_of_min = i
+#     for j in range(i+1,len(arr)):
+#       if arr[index_of_min] > arr[j]:
+#         index_of_min = j
+#       if index_of_min != i:
+#         arr[i],arr[index_of_min] = arr[index_of_min], arr[i]
+#   return arr
 
-sorted_list = selection_sort(myList1)
-print(sorted_list)
+# sorted_list = selection_sort(myList1)
+# print(sorted_list)
+
+
+def BSW(arr,target):
+  low = 0
+  mid = 0
+  high = len(arr) - 1
+  while low <= high:
+    mid = (low + high) // 2
+    mid_item = arr[mid]
+    if mid_item == target:
+      return mid
+    if mid_item < target:
+      low = mid + 1
+    if mid_item > target:
+      high = mid -1
+  return None
+
+
+print(BSW(myList,target_number))
