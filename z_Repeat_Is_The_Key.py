@@ -275,19 +275,32 @@ target_number = 9
 # print(RBS(0,len(myList) - 1,myList,target_number))
 
 
-myList = [5,6,33,2,3,1,9,11,10,4,7,8]
+myList1 = [5,6,33,2,3,1,9,11,10,4,7,8]
 
+
+# def selection_sort(arr):
+#   for i in range(0,len(arr)):
+#     indexOfMin = i
+#     for j in range(i+1,len(arr)):
+#       if arr[indexOfMin] > arr[j]:
+#         indexOfMin = j
+#       if(indexOfMin != i):
+#         arr[i],arr[indexOfMin] = arr[indexOfMin], arr[i]
+#   return arr
+
+# sortedList = selection_sort(myList1)
+
+# print(sortedList)
 
 def selection_sort(arr):
-  for i in range(0,len(arr)):
-    indexOfMin = i
+  for i in range(0, len(arr)):
+    index_of_min = i
     for j in range(i+1,len(arr)):
-      if arr[indexOfMin] > arr[j]:
-        indexOfMin = j
-      if(indexOfMin != i):
-        arr[i],arr[indexOfMin] = arr[indexOfMin], arr[i]
+      if arr[index_of_min] > arr[j]:
+        index_of_min = j
+      if index_of_min != i:
+        arr[i],arr[index_of_min] = arr[index_of_min], arr[i]
   return arr
 
-sortedList = selection_sort(myList)
-
-print(sortedList)
+sorted_list = selection_sort(myList1)
+print(sorted_list)
