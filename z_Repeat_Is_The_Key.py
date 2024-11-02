@@ -306,20 +306,34 @@ myList1 = [5,6,33,2,3,1,9,11,10,4,7,8]
 # print(sorted_list)
 
 
-def BSW(arr,target):
-  low = 0
-  mid = 0
-  high = len(arr) - 1
-  while low <= high:
-    mid = (low + high) // 2
+# def BSW(arr,target):
+#   low = 0
+#   mid = 0
+#   high = len(arr) - 1
+#   while low <= high:
+#     mid = (low + high) // 2
+#     mid_item = arr[mid]
+#     if mid_item == target:
+#       return mid
+#     if mid_item < target:
+#       low = mid + 1
+#     if mid_item > target:
+#       high = mid -1
+#   return None
+
+
+# print(BSW(myList,target_number))
+
+def BSR(low,high,arr,target):
+  if high >= low:
+    mid = (high + low) // 2
     mid_item = arr[mid]
     if mid_item == target:
       return mid
-    if mid_item < target:
-      low = mid + 1
-    if mid_item > target:
-      high = mid -1
+    elif mid_item < target:
+      return BSR(mid + 1, high,arr,target)
+    elif mid_item > target:
+      return BSR(low,mid - 1, arr, target)
   return None
 
-
-print(BSW(myList,target_number))
+print(BSR(0,len(myList),myList,target_number))
