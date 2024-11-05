@@ -324,16 +324,60 @@ myList1 = [5,6,33,2,3,1,9,11,10,4,7,8]
 
 # print(BSW(myList,target_number))
 
-def BSR(low,high,arr,target):
-  if high >= low:
-    mid = (high + low) // 2
-    mid_item = arr[mid]
-    if mid_item == target:
-      return mid
-    elif mid_item < target:
-      return BSR(mid + 1, high,arr,target)
-    elif mid_item > target:
-      return BSR(low,mid - 1, arr, target)
-  return None
+# def BSR(low,high,arr,target):
+#   if high >= low:
+#     mid = (high + low) // 2
+#     mid_item = arr[mid]
+#     if mid_item == target:
+#       return mid
+#     elif mid_item < target:
+#       return BSR(mid + 1, high,arr,target)
+#     elif mid_item > target:
+#       return BSR(low,mid - 1, arr, target)
+#   return None
 
-print(BSR(0,len(myList),myList,target_number))
+# print(BSR(0,len(myList),myList,target_number))
+
+
+# def selection_sort(arr):
+#   for i in range(0, len(arr)):
+#     index_of_min = i
+#     for j in range(i+1,len(arr)):
+#       if arr[index_of_min] > arr[j]:
+#         index_of_min = j
+#       if index_of_min != i:
+#         arr[i],arr[index_of_min] = arr[index_of_min], arr[i]
+#   return arr
+
+# sorted_list = selection_sort(myList1)
+# print(sorted_list)
+
+
+# def selection_sort(arr):
+#   for i in range(0,len(arr)):
+#     index_of_min = i
+#     for j in range(i+1,len(arr)):
+#       if arr[index_of_min] > arr[j]:
+#         index_of_min = j
+#         if index_of_min != i:
+#           arr[i],arr[index_of_min] = arr[index_of_min], arr[i]
+#   return arr
+
+
+def selection_sort(arr):
+  for i in range(0,len(arr)):
+    index_of_min = i
+    for j in range(i+1,len(arr)):
+      if arr[index_of_min] > arr[j]:
+        index_of_min = j
+        if index_of_min != i:
+          arr[i],arr[index_of_min] = arr[index_of_min],arr[i]
+  return arr
+
+
+
+
+
+sorted_list = selection_sort(myList1)
+print(sorted_list)
+
