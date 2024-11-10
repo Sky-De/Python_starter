@@ -75,14 +75,50 @@ myList1 = [5,6,33,2,3,1,9,11,10,4,7,8]
 # print(selection_sort(myList1))
 
 
+# def quick_sort(arr):
+#     if len(arr) < 2:
+#         return arr
+#     else:
+#         pivot = arr[0]
+#         lessArr = [i for i in arr[1:] if i <= pivot]
+#         greaterArr = [i for i in arr[1:] if i > pivot]
+#         return quick_sort(lessArr) + [pivot] + quick_sort(greaterArr)
+    
+
+# print(quick_sort(myList1))
+
+
+# def quick_sort(arr):
+#     if len(arr) < 2:
+#         return arr
+#     else: 
+#         pivot = arr[0]
+#         less = [i for i in arr[1:] if i <= pivot]
+#         greater = [i for i in arr[1:] if i > pivot]
+#         return quick_sort(less) + [pivot] + quick_sort(greater)
+
+# print(quick_sort(myList1))
+
+# def selection_sort(arr):
+#     for i in range(0,len(arr)):
+#         index_of_min = i
+#         for j in range(i+1,len(arr)):
+#             if arr[index_of_min] > arr[j]:
+#                 index_of_min = j
+#                 if index_of_min != i:
+#                     arr[i],arr[index_of_min] = arr[index_of_min],arr[i]
+#     return arr
+
+# print(selection_sort(myList1))
+
+
 def quick_sort(arr):
     if len(arr) < 2:
         return arr
     else:
         pivot = arr[0]
-        lessArr = [i for i in arr[1:] if i <= pivot]
-        greaterArr = [i for i in arr[1:] if i > pivot]
-        return quick_sort(lessArr) + [pivot] + quick_sort(greaterArr)
+        arrOfLess = [i for i in arr[1:] if i < pivot]
+        arrOfGreater = [i for i in arr[1:] if i > pivot]
+        return quick_sort(arrOfLess) + [pivot] + quick_sort(arrOfGreater)
     
-
 print(quick_sort(myList1))
