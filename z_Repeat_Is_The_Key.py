@@ -158,14 +158,46 @@ myList1 = [5,6,33,2,3,1,9,11,10,4,7,8]
 
 # print(selection_sort(myList1))
 
-def quick_sort(arr):
-    if len(arr) < 2:
-        return arr
-    else:
-        pivot = arr[0]
-        less = [i for i in arr[1:] if i <= pivot]
-        greater = [i for i in arr[1:] if i > pivot]
-        return quick_sort(less) + [pivot] + quick_sort(greater)
+# def quick_sort(arr):
+#     if len(arr) < 2:
+#         return arr
+#     else:
+#         pivot = arr[0]
+#         less = [i for i in arr[1:] if i <= pivot]
+#         greater = [i for i in arr[1:] if i > pivot]
+#         return quick_sort(less) + [pivot] + quick_sort(greater)
 
 
-print(quick_sort(myList1))
+# print(quick_sort(myList1))
+
+def bsW(arr,target):
+    low = 0
+    mid = 0
+    high = len(arr) -1
+    while high >= low:
+        mid = (high + low) // 2
+        mid_item = arr[mid]
+        if mid_item == target:
+            return mid
+        elif mid_item > target:
+            high = mid - 1
+        elif mid_item < target:
+            low = mid + 1
+    return arr
+
+def bsR(low,high,arr,target):
+    if high >= low:
+        mid = (high + low) // 2
+        mid_item = arr[mid]
+        if mid_item == target:
+            return mid
+        elif mid_item > target:
+            return bsR(low,mid - 1,arr,target)
+        elif mid_item < target:
+            return bsR(mid+1,high,arr,target)
+    return None
+
+
+print(bsW(myList,9))
+print(bsR(0,len(myList)-1,myList,9))
+        
