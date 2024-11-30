@@ -199,12 +199,22 @@ myList1 = [5,6,33,2,3,1,9,11,10,4,7,8]
 #     return None
 
 
-def selection_sort(arr):
-    for i in range(0,len(arr)):
-        index_of_min = i
-        for j in range(i+1,len(arr)):
-            if arr[index_of_min] > arr[j]:
-                index_of_min = j
-                if index_of_min !=i:
-                    arr[index_of_min],arr[i] = arr[i],arr[index_of_min]
-    return arr
+# def selection_sort(arr):
+#     for i in range(0,len(arr)):
+#         index_of_min = i
+#         for j in range(i+1,len(arr)):
+#             if arr[index_of_min] > arr[j]:
+#                 index_of_min = j
+#                 if index_of_min !=i:
+#                     arr[index_of_min],arr[i] = arr[i],arr[index_of_min]
+#     return arr
+
+
+def quick_sort(arr):
+    if len(arr) < 2:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [i for i in arr[1:] if i <= pivot]
+        greater = [i for i in arr[1:] if i > pivot]
+        return quick_sort(less) + [pivot] + quick_sort(greater)
