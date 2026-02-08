@@ -1,5 +1,23 @@
 # factorial + recursive sum
 
+# recursion
+def factorial_rec(x):
+    if x == 1:
+        return 1
+    else:
+        return x * factorial_rec(x-1)
+    
+# loop
+
+def factorial_loop(x):
+    fact = 1
+    for i in range(1, x+1):
+        fact = fact * i
+    return fact    
+
+print(factorial_rec(5))    
+print(factorial_loop(5))    
+    
 
 
 
