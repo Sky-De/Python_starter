@@ -1,4 +1,4 @@
-# factorial + recursive sum
+# factorial----------------------------------------------- 
 
 # recursion
 def factorial_rec(x):
@@ -18,13 +18,25 @@ def factorial_loop(x):
 print(factorial_rec(5))    
 print(factorial_loop(5))    
     
+# sum ----------------------------------------------------------
 
+sumList = [1,2,3]
+#loop
+def loop_sum(arr):
+    total = 0
+    for i in range(len(arr)):
+        total += arr[i]
+    return total
 
+print(loop_sum(sumList))
+
+#recursion
+def rec_sum(arr):
+    if arr == []:
+        return 0
+    return arr[0] + rec_sum(arr[1:])
+
+print(rec_sum(sumList))
 
 
 # binarySearch + selection sort + quick sort
-
-myList = [1,2,3,4,5,6,7,8,9,10]
-target_number = 9
-
-myList1 = [5,6,33,2,3,1,9,11,10,4,7,8]
